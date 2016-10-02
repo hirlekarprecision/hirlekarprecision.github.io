@@ -1,0 +1,9 @@
+# Site Settings
+title: 'Hirlekar Precision'
+description: 'The official website of Hirlekar Precision, the global experts of differential pressure instrumentation.'
+# url: 'http://hirlekarprecision.github.io' # the base hostname & protocol for your site
+url: 'http://localhost:4000' # the base hostname & protocol for your site
+
+# Admin Settings
+admin_name: 'Gaurav Hirlekar'
+admin_email: 'sales@hirlekarprecision.com'
