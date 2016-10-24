@@ -165,6 +165,9 @@ ul{
 	padding: 13px 50px;
 	font-size:16px;
 }
+#navigaTion .navbar-nav>li:nth-last-child(2)>a{
+	background:initial;
+}
 #navigaTion .navbar-nav>li>a:hover, #navigaTion .navbar-nav>li>a:focus{
 	color:#fa050b;
 }
@@ -1719,9 +1722,9 @@ now override the 3.3 new styles for modern browsers & apply opacity
 .list li{
 	font-size:16px;
 	color:#222c31;
-	width:50%;
+	width:33%;
 	float:left;
-	padding:6px 0;
+	padding:6px 10px 6px 0px;
 	text-align:left;
 }
 .list li .fa{
