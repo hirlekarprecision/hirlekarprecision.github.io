@@ -165,7 +165,7 @@ ul{
 	padding: 13px 50px;
 	font-size:16px;
 }
-#navigaTion .navbar-nav>li:nth-last-child(2)>a{
+#navigaTion .navbar-nav>li:last-child>a{
 	background:initial;
 }
 #navigaTion .navbar-nav>li>a:hover, #navigaTion .navbar-nav>li>a:focus{
@@ -174,29 +174,6 @@ ul{
 #contactus .contactus, #appli .appli, #faq .faq{ color:#fa050b!important;}
 #navigaTion .navbar-nav>li:nth-child(7) a{
 	background:none;
-}
-#navigaTion .navbar-nav>li:last-child{
-	background:#fff;
-}
-#navigaTion .navbar-nav>li:last-child a{
-	color:#fa050b!important;
-	border-top:1px solid #1d1816;
-	border-right:1px solid #1d1816;
-	text-transform:uppercase;
-	font-weight:700;
-    padding: 12px 36px;	
-}
-#navigaTion .navbar-nav>li:last-child a:focus{
-	outline:0;
-}
-/*#navigaTion .navbar-nav>li:last-child:hover a{
-	color:#000!important;
-}*/
-#navigaTion .navbar-nav>li:last-child:hover a {
-    background: #fa050b;
-    color: #fff!important;
-    border: none;
-    padding: 13px 36px;
 }
 
 #navigaTion .dropdown-menu>li>a {
