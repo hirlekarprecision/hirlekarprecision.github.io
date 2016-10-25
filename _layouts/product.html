@@ -32,6 +32,11 @@ layout: default
               <div class="innerProduct">
                 <!-- Tab panes -->
                 <div class="tab-content" id="productDetails">
+                  {% if page.isNew %}
+                  <div class="ribbon-wrapper-green">
+                    <div class="ribbon-green">New!</div>
+                  </div>
+                  {% endif %}
                   <div role="tabpanel" class="tab-pane active" id="DPG">
                     <div class="row">
                       <div class="col-md-3 productImg">
