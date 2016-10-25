@@ -12,10 +12,15 @@ $(".bar").mousedown(function(e){
 
 
 //Scroll Spy
-
-$('#nav').affix({
+$('body').scrollspy({
+    target: ".applications-sidebar"
+});
+$('window').on("load", function() {
+    $('body').scrollspy("refresh");
+})
+$('.applications-sidebar').affix({
     offset: {     
-      top: $('#nav').offset().top,
+      top: $('.applications-sidebar').offset().top,
       bottom: ($('#footerBottom').outerHeight(true) + $('#footerLink').outerHeight(true) + $('#contact').outerHeight(true)) + 40
 	  
     }
