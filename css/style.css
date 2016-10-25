@@ -2884,8 +2884,8 @@ section:last-child {
 
 .applications-sidebar .nav > li > a {
   display: block;
-  padding: 4px 20px;
-  font-size: 16px;
+  padding: 8px 20px;
+  font-size: 15px;
   font-weight: 500;
   color: #767676;
 }
@@ -2893,10 +2893,10 @@ section:last-child {
 .applications-sidebar .nav > li > a:hover,
 .applications-sidebar .nav > li > a:focus {
   padding-left: 19px;
-  color: #563d7c;
+  color: #de0303;
   text-decoration: none;
   background-color: transparent;
-  border-left: 1px solid #563d7c;
+  border-left: 1px solid #de0303;
 }
 
 .applications-sidebar .nav > .active > a,
@@ -2904,9 +2904,9 @@ section:last-child {
 .applications-sidebar .nav > .active:focus > a {
   padding-left: 18px;
   font-weight: bold;
-  color: #563d7c;
+  color: #de0303;
   background-color: transparent;
-  border-left: 2px solid #563d7c;
+  border-left: 2px solid #de0303;
 }
 /* Nav: second level (shown on .active) */
 
@@ -2918,9 +2918,9 @@ section:last-child {
 
 .applications-sidebar .nav .nav > li > a {
   padding-top: 1px;
-  padding-bottom: 1px;
+  padding-bottom: 3px;
   padding-left: 30px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: normal;
 }
 
