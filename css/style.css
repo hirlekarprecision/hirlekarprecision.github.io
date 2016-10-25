@@ -1140,18 +1140,6 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #footerBottom .best{
     text-align:left;
 }
-#footerBottom .dimakh{
-	float:left;
-}
-#footerBottom .dimakh a{
-	color:#A2A2A2;
-	font-size:11px;
-	font-family: 'Raleway', sans-serif;
-	text-decoration:none;
-}
-#footerBottom .dimakh a:hover{
-	color:#fff;
-}
 
 
 /***Send Enquiry***/
