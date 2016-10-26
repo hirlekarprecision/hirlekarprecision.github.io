@@ -113,6 +113,8 @@ ul {
 #topMedia ul li:last-child a:hover {
   color: #000;
 }
+
+
 /***Logo Nav***/
 
 #logoNav {
@@ -158,6 +160,8 @@ ul {
   margin: 0 15px 0 0;
   float: left;
 }
+
+
 /***Navigation***/
 
 #navigaTion {
@@ -313,10 +317,14 @@ ul {
   background: url(../images/icon/hirlekar-nav-arrow.png) no-repeat 45px center;
   color: #E82828!important;
 }
+
+
 /*#navigaTion .unstyled li:first-child{
  border-top:none;
  margin:0 0 15px 0;
 }*/
+
+
 /*#navigaTion .unstyled li:first-child a{
  background:none!important;
  font-size:18px;
@@ -360,6 +368,8 @@ ul {
   outline: 0;
   box-shadow: none;
 }
+
+
 /***Banner***/
 
 #banner {
@@ -378,6 +388,8 @@ ul {
 #banner .carousel-inner {
   height: 100%;
 }
+
+
 /* Slider fade effect */
 
 #banner .carousel-fade .carousel-inner .item {
@@ -430,6 +442,8 @@ ul {
   bottom: 65px;
   z-index: 1;
 }
+
+
 /*
 WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
 now override the 3.3 new styles for modern browsers & apply opacity
@@ -518,6 +532,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #banner .learnMore:hover {
   background: #000;
 }
+
+
 /***Information***/
 
 #Information {
@@ -575,6 +591,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
   left: 0;
   right: 0;
 }
+
+
 /***Welcome Hirlekar Precision***/
 
 #hirlekarPrecision {
@@ -609,6 +627,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #hirlekarPrecision a {
   color: #ee0707;
 }
+
+
 /***Principle***/
 
 #productPrinciple {
@@ -719,6 +739,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
   margin-top: 31px;
   margin-bottom: 31px;
 }
+
+
 /***Explore Products***/
 
 #explorProducts {
@@ -832,6 +854,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #explorProducts .col-md-offset-1 {
   margin-left: 13.333333%;
 }
+
+
 /***Our Achievements***/
 
 #achievements {
@@ -911,6 +935,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #achievements .awardDetail .fa {
   display: block;
 }
+
+
 /***Certified***/
 
 #certified {
@@ -935,6 +961,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
   color: #fff;
   margin-bottom: 5px;
 }
+
+
 /***WorldWide***/
 
 #worldWide {
@@ -986,6 +1014,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #worldWide .fa-chevron-right {
   padding-left: 15px;
 }
+
+
 /***We Export To***/
 
 #export {
@@ -1021,6 +1051,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #export figcaption {
   margin-top: 15px;
 }
+
+
 /***Map***/
 
 #map {
@@ -1061,6 +1093,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
   background: transparent;
   cursor: pointer;
 }
+
+
 /***Contact***/
 
 #contact {
@@ -1098,6 +1132,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #contact .commonVerticalExtra {
   border-right: none;
 }
+
+
 /***FooterLink***/
 
 #footerLink {
@@ -1214,6 +1250,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #footerLink .media li:nth-child(2):hover a {
   color: #fff;
 }
+
+
 /***Footer Bottom***/
 
 #footerBottom {
@@ -1228,6 +1266,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #footerBottom .best {
   text-align: left;
 }
+
+
 /***Send Enquiry***/
 
 .sendEnquiry {
@@ -1260,6 +1300,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 .sendEnquiry a:hover {
   color: #000;
 }
+
+
 /***About Us***/
 
 #aboutUsBanner {
@@ -1358,6 +1400,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
   color: #000;
   margin: 23px 0;
 }
+
+
 /***Why***/
 
 #why .col-md-6 {
@@ -1447,6 +1491,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 .removeLine {
   border-bottom: none!important;
 }
+
+
 /***Our Reach***/
 
 #reach .col-md-6 {
@@ -1549,6 +1595,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 .removeLine {
   border-bottom: none!important;
 }
+
+
 /****Product***/
 
 #pdf .breadcrumb {
@@ -1845,6 +1893,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #productDetails .commonDetails h5 {
   color: #000;
 }
+
+
 /*#productDetails .commonDetails .data1{
 color:#f05111;
 }
@@ -2000,6 +2050,8 @@ color:#952b20;
 #link .threeSixty .fa:hover {
   color: #DE0303;
 }
+
+
 /***Application***/
 
 #application .media-body {
@@ -2135,6 +2187,8 @@ color:#952b20;
 .table>tbody>tr:nth-child(odd) {
   background: #F3F3F3;
 }
+
+
 /***FAQ***/
 
 #faq h5 {
@@ -2163,6 +2217,8 @@ color:#952b20;
 #subProduct .subRow {
   padding-left: 30px;
 }
+
+
 /***Scroll Spy***/
 
 #spyScroll h2 {
@@ -2210,6 +2266,8 @@ section {
 section:last-child {
   border-bottom: none;
 }
+
+
 /***Responsive***/
 
 @media (min-width:1200px) {
@@ -2879,6 +2937,8 @@ section:last-child {
     font-size: 14px;
   }
 }
+
+
 /* By default it's not affixed in mobile views, so undo that */
 
 .applications-sidebar.affix {
@@ -2890,12 +2950,16 @@ section:last-child {
     padding-left: 20px;
   }
 }
+
+
 /* First level of nav */
 
 .applications-sidenav {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+
 /* All levels of nav */
 
 .applications-sidebar .nav > li > a {
@@ -2924,6 +2988,8 @@ section:last-child {
   background-color: transparent;
   border-left: 2px solid #de0303;
 }
+
+
 /* Nav: second level (shown on .active) */
 
 .applications-sidebar .nav .nav {
@@ -2951,6 +3017,8 @@ section:last-child {
   padding-left: 28px;
   font-weight: 500;
 }
+
+
 /* Show and affix the side nav when space allows it */
 
 @media (min-width: 992px) {
@@ -2986,7 +3054,6 @@ section:last-child {
   }
 }
 
-
 .ribbon-wrapper-green {
   width: 85px;
   height: 88px;
@@ -3000,40 +3067,42 @@ section:last-child {
   font: bold 15px Sans-Serif;
   color: #333;
   text-align: center;
-  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
   -webkit-transform: rotate(-45deg);
-  -moz-transform:    rotate(-45deg);
-  -ms-transform:     rotate(-45deg);
-  -o-transform:      rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   position: relative;
   padding: 7px 0;
   left: -30px;
   top: 15px;
   width: 120px;
   background-color: #BFDC7A;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45)); 
-  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45); 
-  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45); 
-  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45); 
-  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45); 
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
   color: #6a6340;
-  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
-  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
-  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
 }
 
-.ribbon-green:before, .ribbon-green:after {
+.ribbon-green:before,
+.ribbon-green:after {
   content: "";
-  border-top:   3px solid #6e8900;   
-  border-left:  3px solid transparent;
+  border-top: 3px solid #6e8900;
+  border-left: 3px solid transparent;
   border-right: 3px solid transparent;
-  position:absolute;
+  position: absolute;
   bottom: -3px;
 }
 
 .ribbon-green:before {
   left: 0;
 }
+
 .ribbon-green:after {
   right: 0;
 }
