@@ -1641,9 +1641,35 @@ now override the 3.3 new styles for modern browsers & apply opacity
   padding-left: 15px;
 }
 
-.productBanner {
+#productBanner {
   background: url(../images/banner/product-page-banner.jpg) no-repeat center center!important;
-  background-size: cover!important;
+  background-size: cover;
+  padding: 45px 0 35px 0;
+}
+
+#productBanner h1 {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+}
+
+#productBanner .breadcrumb {
+  padding: 8px 0;
+  margin-bottom: 0;
+  list-style: none;
+  background: none;
+  border-radius: 0;
+}
+
+#productBanner .breadcrumb a {
+  font-size: 14px;
+  color: #fff;
+}
+
+#productBanner .breadcrumb .active {
+  color: #f7fd8f;
 }
 
 .productName .nav-tabs>li {
