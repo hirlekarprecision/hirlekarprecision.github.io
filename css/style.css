@@ -2188,6 +2188,17 @@ color:#952b20;
   color: #FF0000;
 }
 
+#Container .fail-message {
+  opacity: 0;
+}
+
+#Container.fail .fail-message {
+  opacity: 1;
+}
+#Container.fail h4 {
+  opacity: 0;
+}
+
 
 /***Table***/
 
