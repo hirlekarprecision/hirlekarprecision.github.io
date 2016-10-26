@@ -319,3 +319,32 @@ title: Applications
     <!--end of .row-->
   </div>
 </div>
+
+<script type="text/javascript">
+  //Scroll hover Map isn't zoom
+  $(".bar").click(function() {
+      $(".bar").css("width","0%");
+      setTimeout(function(){ $(".bar").css('width','100%'); },500)    
+  });
+          
+  $(".bar").mousedown(function(e){ 
+      $(".bar").css("width","0%");
+      setTimeout(function(){ $(".bar").css('width','100%'); },500)
+  });
+
+
+  //Scroll Spy
+  $('body').scrollspy({
+      target: ".applications-sidebar"
+  });
+  $('window').on("load", function() {
+      $('body').scrollspy("refresh");
+  })
+  $('.applications-sidebar').affix({
+      offset: {     
+        top: $('.applications-sidebar').offset().top,
+        bottom: ($('#footerBottom').outerHeight(true) + $('#footerLink').outerHeight(true) + $('#contact').outerHeight(true)) + 40
+        
+      }
+  });
+</script>
