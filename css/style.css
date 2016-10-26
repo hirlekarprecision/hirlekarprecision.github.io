@@ -65,6 +65,8 @@ ul {
   transition: 0.5s;
   border-bottom: 1px solid #000!important;
 }
+
+
 /***Top Media***/
 
 #topMedia ul {
@@ -3020,4 +3022,9 @@ section:last-child {
 }
 .ribbon-green:after {
   right: 0;
-}​
+}
+
+.productThumbnail {
+  display: inline;
+  max-height: 50px;
+}

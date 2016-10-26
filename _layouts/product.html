@@ -16,7 +16,7 @@ layout: default
     <ol class="breadcrumb">
       <li><a href="/">Home</a></li>
       <li><a href="/products/">Products</a></li>
-      <li><a href="/{{ page.productType }}/">{{ page.productType | capitalize }}</a></li>
+      <li><a href="/{{ page.category }}/">{{ page.category | capitalize }}</a></li>
       <li class="active">{{ page.title }}</li>
     </ol>
   </div>
@@ -40,17 +40,56 @@ layout: default
                   <div role="tabpanel" class="tab-pane active" id="DPG">
                     <div class="row">
                       <div class="col-md-3 productImg">
-                        <figure><img src="{{ page.title | downcase | replace: ' ', '-' }}.png" alt="{{ page.title }}" class="img-responsive">
+                        <figure>
+                          <img src="{{ page.title | downcase | split: ' ' | join: '-' }}-1.png" alt="{{ page.title }}" class="img-responsive" data-toggle="modal" data-target=".modal-images">
                           <figcaption>{{ page.title }}</figcaption>
                         </figure>
+
+                        <div class="modal fade modal-images" tabindex="-1" role="dialog" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div id="carousel-images" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                  {% for i in (1..100) %}
+                                    {% if i > page.images %}
+                                      {% break %}
+                                    {% else %}
+                                      <li data-target="#carousel-images" data-slide-to="{{ i }}" class="{% if i == 1 %}active{% endif %}"></li>
+                                    {% endif %}
+                                  {% endfor %}
+                                </ol>
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                  {% for i in (1..100) %}
+                                    {% if i > page.images %}
+                                      {% break %}
+                                    {% else %}
+                                      <div class="item {% if i == 1 %}active{% endif %}">
+                                        <img class="img-responsive" src="{{ page.title | downcase | split: ' ' | join: '-' }}-{{ i }}.png">
+                                        <div class="carousel-caption">
+                                        </div>
+                                      </div>
+                                    {% endif %}
+                                  {% endfor %}
+                                </div>
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#carousel-images" role="button" data-slide="prev">
+                                  <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-images" role="button" data-slide="next">
+                                  <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                         <p>
-                          <b>Pressure Ranges</b> 
+                          <b>Pressure Ranges</b>
+                          <br> {{ page.pressureRange | newline_to_br }}
                           <br>
-                          {{ page.pressureRange | newline_to_br }}
-                          <br>
-                          <b>Salient Features</b> 
-                          <br>
-                          {{ page.features | newline_to_br }}
+                          <b>Salient Features</b>
+                          <br> {{ page.features | newline_to_br }}
                           <br>
                         </p>
                       </div>

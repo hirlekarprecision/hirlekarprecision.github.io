@@ -85,7 +85,7 @@
                     <h4>Piston Gauges</h4>
                     <ul class="unstyled">
                       {% for product in site.products %}
-                        {% if product.productType == 'piston' %}
+                        {% if product.category == 'piston' %}
                           <li><a href="{{ product.url }}">{{ product.title }}</a></li>
                         {% endif %}
                       {% endfor %}
@@ -95,14 +95,14 @@
                     <h4>Diaphragm Gauges</h4>
                     <ul class="unstyled secondUnstyled">
                       {% for product in site.products %}
-                        {% if product.productType == 'diaphragm' and forloop.index < 6 %}
+                        {% if product.category == 'diaphragm' and forloop.index < 6 %}
                           <li><a href="{{ product.url }}">{{ product.title }}</a></li>
                         {% endif %}
                       {% endfor %}
                     </ul>
                     <ul class="unstyled secondUnstyled">
                       {% for product in site.products %}
-                        {% if product.productType == 'diaphragm' and forloop.index >= 6 %}
+                        {% if product.category == 'diaphragm' and forloop.index >= 6 %}
                           <li><a href="{{ product.url }}">{{ product.title }}</a></li>
                         {% endif %}
                       {% endfor %}
