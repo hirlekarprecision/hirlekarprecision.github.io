@@ -52,17 +52,11 @@
           <h2>Application <span>Sector</span></h2>
           <div class="footerList">
             <ul>
-              <li><a href="javascript:void(0);">Cryogenic Tank Level Measurement</a></li>
-              <li><a href="javascript:void(0);">Blower Performance</a></li>
-              <li><a href="javascript:void(0);">Natural Gas Filtration</a></li>
-              <li><a href="javascript:void(0);">Air Filter Monitoring (Clean Air Industry)</a></li>
-              <li><a href="javascript:void(0);">Flow control/ balance in branch piping</a></li>
-              <li><a href="javascript:void(0);">Filter monitoring</a></li>
-              <li><a href="javascript:void(0);">Flow Rate control</a></li>
-              <li><a href="javascript:void(0);">Pump performance monitoring</a></li>
-              <li><a href="javascript:void(0);">Self Cleaning Filter monitoring</a></li>
-              <li><a href="javascript:void(0);">Liquid Tank Level Measurement</a></li>
-              <li><a href="javascript:void(0);">Condition monitoring of heating/cooling system</a></li>
+              {% for application in site.applications %}
+                {% if forloop.index < 8 %}
+                  <li><a href="/application.html#{{ application.title | downcase | split: ' ' | join: '-' }}">{{ application.title }}</a></li>
+                {% endif %}
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -70,13 +64,11 @@
           <h2 class="unwanted">&nbsp;</h2>
           <div class="footerList">
             <ul>
-              <li><a href="javascript:void(0);">Reverse flow detection</a></li>
-              <li><a href="javascript:void(0);">Pressure monitoring</a></li>
-              <li><a href="javascript:void(0);">Flow Rate monitoring</a></li>
-              <li><a href="javascript:void(0);">Air & Collector Bag Filter (Pharmaceutical/Food)</a></li>
-              <li><a href="javascript:void(0);">Strainer monitoring</a></li>
-              <li><a href="javascript:void(0);">Collector / Bag filter monitoring</a></li>
-              <li><a href="javascript:void(0);">Backflow Prevention</a></li>
+              {% for application in site.applications %}
+                {% if forloop.index >= 7 %}
+                  <li><a href="/application.html#{{ application.title | downcase | split: ' ' | join: '-' }}">{{ application.title }}</a></li>
+                {% endif %}
+              {% endfor %}
             </ul>
           </div>
         </div>

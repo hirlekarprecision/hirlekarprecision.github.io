@@ -43,3 +43,5 @@ baseurl: "" # does not include hostname
 collections:
   products:
     output: true
+  applications:
+    output: false
