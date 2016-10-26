@@ -7,53 +7,46 @@ title: Products
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-3">
-        <ul id="filters" class="clearfix">
-          <li><span class="filter active" data-filter=".app, .hvac, .air, .liquid, .tank">View All</span></li>
-          <li><span class="filter" data-filter=".app">Natural Gas</span></li>
-          <li><span class="filter" data-filter=".hvac">HVAC</span></li>
-          <li><span class="filter" data-filter=".air">Air Filter Monitoring</span></li>
-          <li><span class="filter" data-filter=".liquid">Liquid Level</span></li>
-          <li><span class="filter" data-filter=".tank">Cryogenic Tank Level</span></li>
-        </ul>
+        <form class="controls" id="Filters">
+          <fieldset>
+            <h4>Applications</h4> {% for application in site.applications %}
+            <div class="checkbox">
+              <input type="checkbox" value=".{{ application.title | downcase | split: ' ' | join: '-' }}">
+              <label for="">{{ application.title }}</label>
+            </div>
+            {% endfor %}
+          </fieldset>
+        </form>
       </div>
       <div class="col-md-9 col-sm-9">
-        <div id="portfoliolist">
-          <div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="landingList">
-                  <h4>Piston Gauges</h4>
-                  <ul>
-                    <li class="portfolio app" data-cat="app"><a href="200-dpg.html">200 DPG</a></li>
-                    <li class="portfolio air" data-cat="air"><a href="double-dial-200-dpg.html">Double Dial 200 DPG</a></li>
-                    <li class="portfolio hvac" data-cat="hvac"><a href="dx-10.html">DX-10</a></li>
-                    <li class="portfolio hvac" data-cat="hvac"><a href="pop-up-indicator.html">Pop up indicator</a></li>
-                    <li class="portfolio hvac" data-cat="hvac"><a href="pr-10.html">PR-10</a></li>
-                    <li class="portfolio app" data-cat="app"><a href="ex-200-dpg.html">EX-200 DPG</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="landingList">
-                  <h4>Diaphragm Gauges</h4>
-                  <ul>
-                    <li class="portfolio app" data-cat="app"><a href="200-dgr.html">200 DGR</a></li>
-                    <li class="portfolio app" data-cat="app"><a href="300-dgc.html">300 DGC</a></li>
-                    <li class="portfolio hvac" data-cat="hvac"><a href="400-dgc.html">400 DGC</a></li>
-                    <li class="portfolio hvac" data-cat="hvac"><a href="dx-20.html">DX-20</a></li>
-                    <li class="portfolio tank" data-cat="tank"><a href="600-dgc.html">600 DGC</a></li>
-                    <li class="portfolio tank" data-cat="tank"><a href="gx-100.html">GX-100</a></li>
-                    <li class="portfolio hvac" data-cat="hvac"><a href="pr-20.html">PR 20</a></li>
-                    <li class="portfolio hvac" data-cat="hvac"><a href="ex-200-dgr.html">EX-200 DGR</a></li>
-                    <li class="portfolio air" data-cat="air"><a href="ex-300-dgc.html">EX-300 DGC</a></li>
-                    <li class="portfolio air" data-cat="air"><a href="ex-400-dgc.html">EX-400 DGC</a></li>
-                    <li class="portfolio liquid" data-cat="liquid"><a href="700-dgc.html">700 DGC</a></li>
-                    <li class="portfolio liquid" data-cat="liquid"><a href="cr-float-gauge.html">CR Float Gauge</a></li>
-                    <li class="portfolio tank" data-cat="tank"><a href="cz-300-dgc.html">CZ 300 DGC</a></li>
-                    <li class="portfolio hvac" data-cat="hvac"><a href="cz-400-dgc.html">CZ 400 DGC</a></li>
-                  </ul>
-                </div>
-              </div>
+        <div id="Container">
+          <div class="row">
+            <div class="fail-message"><span>No items were found matching the selected filters</span></div>
+            <div class="col-md-4">
+              <h4>Piston Gauges</h4>
+              <ul>
+                {% for product in site.products %} 
+                  {% if product.category == 'piston' %}
+                  <li class="mix {{ product.applications | join: ' ' }}">
+                    <img class="productThumbnail" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-1.png" alt="{{ product.title }}">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                  </li>
+                  {% endif %} 
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="col-md-8">
+              <h4>Diaphragm Gauges</h4>
+              <ul>
+                {% for product in site.products %} 
+                  {% if product.category == 'diaphragm' %}
+                  <li class="mix {{ product.applications | join: ' ' }}">
+                    <img class="productThumbnail" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-1.png" alt="{{ product.title }}">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                  </li>
+                  {% endif %} 
+                {% endfor %}
+              </ul>
             </div>
           </div>
         </div>
@@ -61,32 +54,158 @@ title: Products
     </div>
   </div>
 </div>
-<!-- <script type="text/javascript">
-$(function() {
+<script src="/js/jquery.mixitup.min.js" type="text/javascript" ></script>
+<script type="text/javascript">
+// To keep our code clean and modular, all custom functionality will be contained inside a single object literal called "checkboxFilter".
 
-  var filterList = {
-
-    init: function() {
-
-      // MixItUp plugin
-      // http://mixitup.io
-      $('#portfoliolist').mixItUp({
-        selectors: {
-          target: '.portfolio',
-          filter: '.filter'
-        },
-        load: {
-          filter: '.app, .hvac, .air, .liquid, .tank'
-        }
+var checkboxFilter = {
+  
+  // Declare any variables we will need as properties of the object
+  
+  $filters: null,
+  $reset: null,
+  groups: [],
+  outputArray: [],
+  outputString: '',
+  
+  // The "init" method will run on document ready and cache any jQuery objects we will need.
+  
+  init: function(){
+    var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "checkboxFilter" object so that we can share methods and properties between all parts of the object.
+    
+    self.$filters = $('#Filters');
+    self.$reset = $('#Reset');
+    self.$container = $('#Container');
+    
+    self.$filters.find('fieldset').each(function(){
+      self.groups.push({
+        $inputs: $(this).find('input'),
+        active: [],
+        tracker: false
       });
-
+    });
+    
+    self.bindHandlers();
+  },
+  
+  // The "bindHandlers" method will listen for whenever a form value changes. 
+  
+  bindHandlers: function(){
+    var self = this;
+    
+    self.$filters.on('change', function(){
+      self.parseFilters();
+    });
+    
+    self.$reset.on('click', function(e){
+      e.preventDefault();
+      self.$filters[0].reset();
+      self.parseFilters();
+    });
+  },
+  
+  // The parseFilters method checks which filters are active in each group:
+  
+  parseFilters: function(){
+    var self = this;
+ 
+    // loop through each filter group and add active filters to arrays
+    
+    for(var i = 0, group; group = self.groups[i]; i++){
+      group.active = []; // reset arrays
+      group.$inputs.each(function(){ 
+        $(this).is(':checked') && group.active.push(this.value);
+      });
+      group.active.length && (group.tracker = 0);
     }
+    
+    self.concatenate();
+  },
+  
+  // The "concatenate" method will crawl through each group, concatenating filters as desired:
+  
+  concatenate: function(){
+    var self = this,
+      cache = '',
+      crawled = false,
+      checkTrackers = function(){
+        var done = 0;
+        
+        for(var i = 0, group; group = self.groups[i]; i++){
+          (group.tracker === false) && done++;
+        }
 
-  };
+        return (done < self.groups.length);
+      },
+      crawl = function(){
+        for(var i = 0, group; group = self.groups[i]; i++){
+          group.active[group.tracker] && (cache += group.active[group.tracker]);
 
-  // Run the show!
-  filterList.init();
+          if(i === self.groups.length - 1){
+            self.outputArray.push(cache);
+            cache = '';
+            updateTrackers();
+          }
+        }
+      },
+      updateTrackers = function(){
+        for(var i = self.groups.length - 1; i > -1; i--){
+          var group = self.groups[i];
 
+          if(group.active[group.tracker + 1]){
+            group.tracker++; 
+            break;
+          } else if(i > 0){
+            group.tracker && (group.tracker = 0);
+          } else {
+            crawled = true;
+          }
+        }
+      };
+    
+    self.outputArray = []; // reset output array
 
+    do{
+      crawl();
+    }
+    while(!crawled && checkTrackers());
+
+    self.outputString = self.outputArray.join();
+    
+    // If the output string is empty, show all rather than none:
+    
+    !self.outputString.length && (self.outputString = 'all'); 
+    
+    //console.log(self.outputString); 
+    
+    // ^ we can check the console here to take a look at the filter string that is produced
+    
+    // Send the output string to MixItUp via the 'filter' method:
+    
+    if(self.$container.mixItUp('isLoaded')){
+      self.$container.mixItUp('filter', self.outputString);
+    }
+  }
+};
+  
+// On document ready, initialise our code.
+
+$(function(){
+      
+  // Initialize checkboxFilter code
+      
+  checkboxFilter.init();
+      
+  // Instantiate MixItUp
+      
+  $('#Container').mixItUp({
+    controls: {
+      enable: false // we won't be needing these
+    },
+    animation: {
+      easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
+      duration: 600
+    }
+  });    
 });
-</script> -->
+</script>

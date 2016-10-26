@@ -2058,13 +2058,16 @@ color:#952b20;
 #application .modal-body {
   height: 700px;
 }
+
+
 /***Landing Page***/
 
-.landingList {
+#Container {
   padding: 0;
+  margin-bottom: 50px;
 }
 
-.landingList h4 {
+#Container h4 {
   font-size: 20px;
   color: #000;
   padding-bottom: 10px;
@@ -2072,12 +2075,21 @@ color:#952b20;
   margin-bottom: 20px;
 }
 
-.landingList ul li {
-  padding: 5px 0;
+#Container .mix {
+  display: none;
+  padding: 10px 0;
   padding-left: 20px;
 }
 
-.landingList ul li:hover {
+#Container .col-md-8 .mix {
+  width: 48%;
+}
+
+#Container .col-md-4 .mix {
+  width: 100%;
+}
+
+#Container .mix:hover {
   padding: 5px 0;
   background: url(../images/icon/hirlekar-triangle-hover.png) no-repeat 0 center;
   padding-left: 20px;
@@ -2088,15 +2100,17 @@ color:#952b20;
   -ms-transition: all 0.5s;
 }
 
-.landingList ul li a {
+#Container .mix a {
   text-decoration: none;
   font-size: 16px;
   color: #6B6B6B;
 }
 
-.landingList ul li a:hover {
+#Container .mix a:hover {
   color: #FF0000;
 }
+
+
 /***Table***/
 
 .outerTable {
