@@ -2168,7 +2168,7 @@ color:#952b20;
 }
 
 #Container .mix:hover {
-  padding: 5px 0;
+  /*padding: 5px 0;*/
   background: url(../images/icon/hirlekar-triangle-hover.png) no-repeat 0 center;
   padding-left: 20px;
   transition: all 0.5s;
@@ -2195,6 +2195,7 @@ color:#952b20;
 #Container.fail .fail-message {
   opacity: 1;
 }
+
 #Container.fail h4 {
   opacity: 0;
 }
@@ -3145,6 +3146,16 @@ section:last-child {
 }
 
 .productThumbnail {
-  display: inline;
   max-height: 50px;
+  margin: 0 auto;
+}
+
+.vcenter {
+  position: relative;
+  transform: translateY(50%);
+}
+
+.nopadding {
+  padding: 0!important;
+  margin: 0!important;
 }

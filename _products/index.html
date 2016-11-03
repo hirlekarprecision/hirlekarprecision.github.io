@@ -9,10 +9,11 @@ title: Products
       <div class="col-md-3 col-sm-3">
         <form class="controls" id="Filters">
           <fieldset>
-            <h4>Applications</h4> {% for application in site.applications %}
+            <h4>Applications</h4> 
+            {% for application in site.applications %}
             <div class="checkbox">
               <input type="checkbox" value=".{{ application.title | downcase | split: ' ' | join: '-' }}">
-              <label for="">{{ application.title }}</label>
+              <label>{{ application.title }}</label>
             </div>
             {% endfor %}
           </fieldset>
@@ -36,9 +37,13 @@ title: Products
               <ul>
                 {% for product in site.products %} 
                   {% if product.category == 'piston' %}
-                    <img class="productThumbnail" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-1.png" alt="{{ product.title }}">
-                    <a href="{{ product.url }}">{{ product.title }}</a>
                   <li class="mix {{ product.applications | join: ' ' }} {{ product.specialRequirements | join: ' ' }}">
+                    <div class="col-md-5 col-sm-5">
+                      <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-thumb.png" alt="{{ product.title }}"></a>
+                    </div>
+                    <div class="col-md-7 col-sm-7 vcenter nopadding">
+                      <a href="{{ product.url }}">{{ product.title }}</a>
+                    </div>
                   </li>
                   {% endif %} 
                 {% endfor %}
@@ -49,9 +54,13 @@ title: Products
               <ul>
                 {% for product in site.products %} 
                   {% if product.category == 'diaphragm' %}
-                    <img class="productThumbnail" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-1.png" alt="{{ product.title }}">
-                    <a href="{{ product.url }}">{{ product.title }}</a>
                   <li class="mix {{ product.applications | join: ' ' }} {{ product.specialRequirements | join: ' ' }}">
+                    <div class="col-md-5 col-sm-5">
+                      <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-thumb.png" alt="{{ product.title }}"></a>
+                    </div>
+                    <div class="col-md-7 col-sm-7 vcenter nopadding">
+                      <a href="{{ product.url }}">{{ product.title }}</a>
+                    </div>
                   </li>
                   {% endif %} 
                 {% endfor %}
