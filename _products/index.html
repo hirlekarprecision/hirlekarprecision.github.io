@@ -16,6 +16,15 @@ title: Products
             </div>
             {% endfor %}
           </fieldset>
+          <fieldset>
+            <h4>Special Requirements</h4>
+            {% for requirement in site.data.specialRequirements %}
+            <div class="checkbox">
+              <input type="checkbox" value=".{{ requirement | downcase | split: ' ' | join: '-' }}">
+              <label>{{ requirement }}</label>
+            </div>
+            {% endfor %}
+          </fieldset>
         </form>
       </div>
       <div class="col-md-9 col-sm-9">
@@ -27,9 +36,9 @@ title: Products
               <ul>
                 {% for product in site.products %} 
                   {% if product.category == 'piston' %}
-                  <li class="mix {{ product.applications | join: ' ' }}">
                     <img class="productThumbnail" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-1.png" alt="{{ product.title }}">
                     <a href="{{ product.url }}">{{ product.title }}</a>
+                  <li class="mix {{ product.applications | join: ' ' }} {{ product.specialRequirements | join: ' ' }}">
                   </li>
                   {% endif %} 
                 {% endfor %}
@@ -40,9 +49,9 @@ title: Products
               <ul>
                 {% for product in site.products %} 
                   {% if product.category == 'diaphragm' %}
-                  <li class="mix {{ product.applications | join: ' ' }}">
                     <img class="productThumbnail" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-1.png" alt="{{ product.title }}">
                     <a href="{{ product.url }}">{{ product.title }}</a>
+                  <li class="mix {{ product.applications | join: ' ' }} {{ product.specialRequirements | join: ' ' }}">
                   </li>
                   {% endif %} 
                 {% endfor %}
