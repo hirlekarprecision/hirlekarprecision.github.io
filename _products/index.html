@@ -12,8 +12,7 @@ title: Products
             <h4>Applications</h4> 
             {% for application in site.applications %}
             <div class="checkbox">
-              <input type="checkbox" value=".{{ application.title | downcase | split: ' ' | join: '-' }}">
-              <label>{{ application.title }}</label>
+              <label><input type="checkbox" value=".{{ application.title | downcase | split: ' ' | join: '-' }}">{{ application.title }}</label>
             </div>
             {% endfor %}
           </fieldset>
@@ -21,8 +20,7 @@ title: Products
             <h4>Special Requirements</h4>
             {% for requirement in site.data.specialRequirements %}
             <div class="checkbox">
-              <input type="checkbox" value=".{{ requirement | downcase | split: ' ' | join: '-' }}">
-              <label>{{ requirement }}</label>
+              <label><input type="checkbox" value=".{{ requirement | downcase | split: ' ' | join: '-' }}">{{ requirement }}</label>
             </div>
             {% endfor %}
           </fieldset>
