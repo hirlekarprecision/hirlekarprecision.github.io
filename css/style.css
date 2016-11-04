@@ -195,10 +195,11 @@ ul {
 #navigaTion .navbar-nav>li>a {
   color: #fff;
   background: url(../images/icon/hirlekar-vertical-Line.png) no-repeat right center;
-  padding: 13px 50px;
+  padding: 13px 78px;
   font-size: 16px;
 }
 
+/*Specifically reset the background to prevent the separator appearing after last element*/
 #navigaTion .navbar-nav>li:last-child>a {
   background: initial;
 }
@@ -1642,7 +1643,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 }
 
 #productBanner {
-  background: url(../images/banner/product-page-banner.jpg) no-repeat center center!important;
+  background: url(../images/banner/product-page-banner.jpg) no-repeat center center;
   background-size: cover;
   padding: 45px 0 35px 0;
 }
@@ -2326,14 +2327,9 @@ section:last-child {
     margin: 0 43px;
   }
   #navigaTion .navbar-nav>li>a {
-    padding: 13px 22px;
+    padding: 13px 55px;
   }
-  #navigaTion .navbar-nav>li:last-child a {
-    padding: 12px 22px;
-  }
-  #navigaTion .navbar-nav>li:last-child:hover a {
-    padding: 13px 22px;
-  }
+  
   #banner .carousel-caption h1 {
     font-size: 38px;
     margin-bottom: 15px;
@@ -2408,14 +2404,8 @@ section:last-child {
     margin: 0 5px 0 15px;
   }
   #navigaTion .navbar-nav>li>a {
-    padding: 14px 12px;
+    padding: 14px 40px;
     font-size: 14px;
-  }
-  #navigaTion .navbar-nav>li:last-child a {
-    padding: 13px 12px;
-  }
-  #navigaTion .navbar-nav>li:last-child:hover a {
-    padding: 14px 12px;
   }
   #banner .carousel-caption {
     padding-bottom: 70px;
@@ -2657,16 +2647,9 @@ section:last-child {
   #navigaTion .in {
     border-bottom: 1px solid #1d1816;
   }
-  #navigaTion .navbar-nav>li:last-child a {
-    border-top: none;
-    border-right: none;
-  }
   #navigaTion .navbar-nav {
     margin-top: 0;
     margin-bottom: 0;
-  }
-  #navigaTion .navbar-nav>li:last-child:hover a {
-    padding: 13px 12px;
   }
   #navigaTion .navbar-nav {
     margin: 0 -15px;
@@ -3150,9 +3133,10 @@ section:last-child {
   margin: 0 auto;
 }
 
-.vcenter {
+.center {
   position: relative;
   transform: translateY(50%);
+  text-align: center;
 }
 
 .nopadding {
