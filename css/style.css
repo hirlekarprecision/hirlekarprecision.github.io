@@ -199,7 +199,9 @@ ul {
   font-size: 16px;
 }
 
+
 /*Specifically reset the background to prevent the separator appearing after last element*/
+
 #navigaTion .navbar-nav>li:last-child>a {
   background: initial;
 }
@@ -1816,16 +1818,16 @@ now override the 3.3 new styles for modern browsers & apply opacity
   font-weight: 700;
 }
 
-#productDetails .commonDetails:before {
-  position: absolute;
-  content: url(../images/icon/hirlekar-vertical-product.jpg);
-  right: 0;
-  top: 12%;
+.productImg .img-responsive {
+  max-height: 200px;
+}
+
+.productImg .carousel-inner .img-responsive {
+  max-height: 600px;
 }
 
 #productDetails .innerDetails {
   width: 80%;
-  border-bottom: 1px solid #c4c4c4;
   margin: 0 auto;
   min-height: 115px;
 }
@@ -1843,6 +1845,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
   width: 28px;
   height: 36px;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 #productDetails .innerDetails .datasheet {
@@ -1913,39 +1916,14 @@ now override the 3.3 new styles for modern browsers & apply opacity
   content: none!important;
 }
 
-#productDetails .bottomBorder {
-  border-bottom: none;
-}
-
 #productDetails .commonDetails h5 {
   color: #000;
 }
 
-
-/*#productDetails .commonDetails .data1{
-color:#f05111;
+#downloadables {
+  background: rgba(168, 168, 168, 0.2);
+  border-radius: 10px;
 }
-#productDetails .commonDetails .data2{
-color:#07b0ee;
-}
-#productDetails .commonDetails .data3{
-color:#368208;
-}
-#productDetails .commonDetails .data4{
-color:#8c1dc6;
-}
-#productDetails .commonDetails .data5{
-color:#a7a911;
-}
-#productDetails .commonDetails .data6{
-color:#d74a7c ;
-}
-#productDetails .commonDetails .data7{
-color:#0e1195;
-}
-#productDetails .commonDetails .data8{
-color:#952b20;
-}*/
 
 #productDetails .col-md-9 {
   padding: 0 40px 0 30px;
@@ -1953,7 +1931,6 @@ color:#952b20;
 
 #productDetails .productImg {
   text-align: center;
-  border-right: 1px solid #ccc;
 }
 
 #productDetails .productImg img {
@@ -2164,7 +2141,7 @@ color:#952b20;
   width: 100%;
 }
 
-@media(min-width:567px){
+@media(min-width:567px) {
   #Container .col-md-8 .mix {
     width: 48%;
   }
@@ -2331,7 +2308,6 @@ section:last-child {
   #navigaTion .navbar-nav>li>a {
     padding: 13px 55px;
   }
-  
   #banner .carousel-caption h1 {
     font-size: 38px;
     margin-bottom: 15px;
@@ -2745,9 +2721,6 @@ section:last-child {
   }
   #productDetails .sixFourtyDevice:before {
     content: none!important;
-  }
-  #productDetails .bottomBorder {
-    border-bottom: 1px solid #c4c4c4;
   }
   #productDetails .sixfourtyDeviceborder {
     border-bottom: none!important;

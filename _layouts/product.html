@@ -16,7 +16,7 @@ layout: default
     <ol class="breadcrumb">
       <li><a href="/">Home</a></li>
       <li><a href="/products/">Products</a></li>
-      <li><a href="/{{ page.category }}/">{{ page.category | capitalize }}</a></li>
+      <li><a href="/products/{{ page.category }}/">{{ page.category | capitalize }}</a></li>
       <li class="active">{{ page.title }}</li>
     </ol>
   </div>
@@ -88,13 +88,10 @@ layout: default
                           <b>Pressure Ranges</b>
                           <br> {{ page.pressureRange | newline_to_br }}
                           <br>
-                          <b>Salient Features</b>
-                          <br> {{ page.features | newline_to_br }}
-                          <br>
                         </p>
                       </div>
                       <div class="col-md-9 text-center">
-                        <div class="row">
+                        <div class="row" id="downloadables">
                           <div class="col-md-3 col-sm-3 col-xs-6 commonDetails">
                             <div class="innerDetails">
                               <a href="datasheet.pdf" target="_blank">
@@ -166,18 +163,6 @@ layout: default
                                 </div>
                               </a>
                             </div>
-                          </div>
-                        </div>
-                        <div class="row subRow">
-                          <div class="sector">
-                            <h4 class="app">APPLICATIONS SECTOR</h4>
-                          </div>
-                          <div class="list">
-                            <ul>
-                              {% for application in page.applicationsText %}
-                              <li><i class="fa fa-check-square" aria-hidden="true"></i>{{application}}</li>
-                              {% endfor %}
-                            </ul>
                           </div>
                         </div>
                       </div>
