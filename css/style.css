@@ -2160,12 +2160,14 @@ color:#952b20;
   padding-left: 20px;
 }
 
-#Container .col-md-8 .mix {
-  width: 48%;
+#Container .mix {
+  width: 100%;
 }
 
-#Container .col-md-4 .mix {
-  width: 100%;
+@media(min-width:567px){
+  #Container .col-md-8 .mix {
+    width: 48%;
+  }
 }
 
 #Container .mix:hover {
@@ -3133,13 +3135,6 @@ section:last-child {
   margin: 0 auto;
 }
 
-.center {
-  position: relative;
-  transform: translateY(50%);
-  text-align: center;
-}
-
 .nopadding {
-  padding: 0!important;
-  margin: 0!important;
+  padding-left: 0;
 }

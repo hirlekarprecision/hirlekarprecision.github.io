@@ -28,46 +28,40 @@ title: Products
           </fieldset>
         </form>
       </div>
-      <div class="col-md-9 col-sm-9">
-        <div id="Container">
+      <div id="Container" class="col-md-9 col-sm-9">
           <div class="row">
             <div class="fail-message"><span>No items were found matching the selected filters</span></div>
             <div class="col-md-4">
               <h4>Piston Gauges</h4>
-              <ul>
-                {% for product in site.products %} 
-                  {% if product.category == 'piston' %}
-                  <li class="mix {{ product.applications | join: ' ' }} {{ product.specialRequirements | join: ' ' }}">
-                    <div class="col-md-5 col-sm-5">
-                      <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-thumb.png" alt="{{ product.title }}"></a>
-                    </div>
-                    <div class="col-md-7 col-sm-7 center nopadding">
-                      <a href="{{ product.url }}">{{ product.title }}</a>
-                    </div>
-                  </li>
-                  {% endif %} 
-                {% endfor %}
-              </ul>
+              {% for product in site.products %} 
+                {% if product.category == 'piston' %}
+                <div class="row mix {{ product.applications | join: ' ' }} {{ product.specialRequirements | join: ' ' }}">
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-thumb.png" alt="{{ product.title }}"></a>
+                  </div>
+                  <div class="col-md-7 col-sm-7 col-xs-7 nopadding">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                  </div>
+                </div>
+                {% endif %} 
+              {% endfor %}
             </div>
             <div class="col-md-8">
               <h4>Diaphragm Gauges</h4>
-              <ul>
-                {% for product in site.products %} 
-                  {% if product.category == 'diaphragm' %}
-                  <li class="mix {{ product.applications | join: ' ' }} {{ product.specialRequirements | join: ' ' }}">
-                    <div class="col-md-5 col-sm-5">
-                      <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-thumb.png" alt="{{ product.title }}"></a>
-                    </div>
-                    <div class="col-md-7 col-sm-7 center nopadding">
-                      <a href="{{ product.url }}">{{ product.title }}</a>
-                    </div>
-                  </li>
-                  {% endif %} 
-                {% endfor %}
-              </ul>
+              {% for product in site.products %} 
+                {% if product.category == 'diaphragm' %}
+                <div class="row mix {{ product.applications | join: ' ' }} {{ product.specialRequirements | join: ' ' }}">
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-thumb.png" alt="{{ product.title }}"></a>
+                  </div>
+                  <div class="col-md-7 col-sm-7 col-xs-7 nopadding">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                  </div>
+                </div>
+                {% endif %} 
+              {% endfor %}
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
