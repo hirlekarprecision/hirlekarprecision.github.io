@@ -92,78 +92,94 @@ layout: default
                       </div>
                       <div class="col-md-9 text-center">
                         <div class="row" id="downloadables">
+                          {% if page.datasheet %}
                           <div class="col-md-3 col-sm-3 col-xs-6 commonDetails">
                             <div class="innerDetails">
-                              <a href="datasheet.pdf" target="_blank">
+                              <a href="datasheet.pdf">
                                 <h5 class="data1">Datasheet</h5>
                                 <div class="datasheet commonBlock">
                                 </div>
                               </a>
                             </div>
                           </div>
+                          {% endif %}
+                          {% if page.drawings %}
                           <div class="col-md-3 col-sm-3 col-xs-6 commonDetails sixFourtyDevice">
                             <div class="innerDetails">
-                              <a href="drawings.pdf" target="_blank">
+                              <a href="drawings.pdf">
                                 <h5 class="data2"> Dimensional Drawing</h5>
                                 <div class="drawing commonBlock">
                                 </div>
                               </a>
                             </div>
                           </div>
+                          {% endif %}
+                          {% if page.ordering %}
                           <div class="col-md-3 col-sm-3 col-xs-6 commonDetails">
                             <div class="innerDetails">
-                              <a href="ordering.pdf" target="_blank">
+                              <a href="ordering.pdf">
                                 <h5 class="data3">How To Order</h5>
                                 <div class="how commonBlock">
                                 </div>
                               </a>
                             </div>
                           </div>
+                          {% endif %}
+                          {% if page.switch-cover %}
                           <div class="col-md-3 col-sm-3 col-xs-6 commonDetails fourBlock">
                             <div class="innerDetails">
-                              <a href="switch-cover.pdf" target="_blank">
+                              <a href="switch-cover.pdf">
                                 <h5 class="data4"> Switch Cover Combinations</h5>
                                 <div class="switch commonBlock">
                                 </div>
                               </a>
                             </div>
                           </div>
+                          {% endif %}
+                          {% if page.bracket-mounting %}
                           <div class="col-md-3 col-sm-3 col-xs-6 commonDetails">
                             <div class="innerDetails bottomBorder">
-                              <a href="bracket-mounting.pdf" target="_blank">
+                              <a href="bracket-mounting.pdf">
                                 <h5 class="data5"> Bracket Mounting Combination</h5>
                                 <div class="bracket commonBlock">
                                 </div>
                               </a>
                             </div>
                           </div>
+                          {% endif %}
+                          {% if page.porting %}
                           <div class="col-md-3 col-sm-3 col-xs-6 commonDetails sixFourtyDevice">
                             <div class="innerDetails bottomBorder">
-                              <a href="porting.pdf" target="_blank">
+                              <a href="porting.pdf">
                                 <h5 class="data6"> Porting Details</h5>
                                 <div class="porting commonBlock">
                                 </div>
                               </a>
                             </div>
                           </div>
+                          {% endif %}
+                          {% if page.manual %}
                           <div class="col-md-3 col-sm-3 col-xs-6 commonDetails">
                             <div class="innerDetails bottomBorder sixfourtyDeviceborder">
-                              <a href="manual.pdf" target="_blank">
+                              <a href="manual.pdf">
                                 <h5 class="data7">Instructions Manual</h5>
                                 <div class="instructions commonBlock">
                                 </div>
                               </a>
                             </div>
                           </div>
+                          {% endif %}
+                          {% if page.checklist %}
                           <div class="col-md-3 col-sm-3 col-xs-6 commonDetails fourBlock">
                             <div class="innerDetails bottomBorder sixfourtyDeviceborder">
-                              <a href="checklist.pdf" target="_blank">
+                              <a href="checklist.pdf">
                                 <h5 class="data8">Check List For Enquiries</h5>
                                 <div class="check commonBlock">
                                 </div>
                               </a>
                             </div>
                           </div>
+                          {% endif %}
                         </div>
                       </div>
                     </div>
