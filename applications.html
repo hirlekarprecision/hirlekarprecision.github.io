@@ -44,7 +44,11 @@ title: Applications
                         <h4>Advantages</h4>
                         <p>{{ application.advantages }}</p>
                         <h4>Recommended Models</h4>
-                        <p>{{ application.products | join: ', ' | upcase }}</p>
+                        {% for product in site.products %}
+                          {% if product.applications contains application.title %}
+                            <a style="display: inline-block;" href="{{ product.url }}"><img class="productThumbnail img-responsive" src="/products/{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-thumb.png" alt="{{ product.title }}">{{ product.title }}</a>
+                          {% endif %}
+                        {% endfor %}
                       </div>
                       <div class="col-md-12">
                         <h4>Note</h4>
