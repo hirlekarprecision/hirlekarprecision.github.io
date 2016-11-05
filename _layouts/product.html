@@ -2,7 +2,7 @@
 layout: default 
 ---
 <!--Navigation-->
-<div class="container-fluid productBanner" id="aboutUsBanner">
+<div class="container-fluid productBanner" id="productBanner">
   <div class="container">
     <h1>{{ page.title }}</h1>
     <!--<ol class="breadcrumb">
@@ -32,21 +32,21 @@ layout: default
               <div class="innerProduct">
                 <!-- Tab panes -->
                 <div class="tab-content" id="productDetails">
-                  {% if page.isNew %}
-                  <div class="ribbon-wrapper-green">
-                    <div class="ribbon-green">New!</div>
-                  </div>
-                  {% endif %}
                   <div role="tabpanel" class="tab-pane active" id="DPG">
                     <div class="row">
                       <div class="col-md-3 productImg">
+                        {% if page.isNew %}
+                        <div class="ribbon-wrapper-green">
+                          <div class="ribbon-green">New!</div>
+                        </div>
+                        {% endif %}
                         <figure>
-                          <img src="{{ page.title | downcase | replace: ' ', '-' }}-1.png" alt="{{ page.title }}" class="img-responsive" data-toggle="modal" data-target=".modal-images">
+                          <img src="{{ page.title | downcase | replace: ' ', '-' }}-1.png" alt="{{ page.title }}" class="img-responsive" data-toggle="modal" data-target="#modal-images">
                           <figcaption>{{ page.title }}</figcaption>
                         </figure>
 
-                        <div class="modal fade modal-images" tabindex="-1" role="dialog" aria-hidden="true">
-                          <div class="modal-dialog modal-lg">
+                        <div class="modal fade" id="modal-images" tabindex="-1" role="dialog" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div id="carousel-images" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
@@ -58,8 +58,8 @@ layout: default
                                     {% endif %}
                                   {% endfor %}
                                 </ol>
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
+
+                                <div class="carousel-inner" role="listbox">
                                   {% for i in (1..100) %}
                                     {% if i > page.images %}
                                       {% break %}
@@ -72,7 +72,7 @@ layout: default
                                     {% endif %}
                                   {% endfor %}
                                 </div>
-                                <!-- Controls -->
+
                                 <a class="left carousel-control" href="#carousel-images" role="button" data-slide="prev">
                                   <span class="glyphicon glyphicon-chevron-left"></span>
                                 </a>

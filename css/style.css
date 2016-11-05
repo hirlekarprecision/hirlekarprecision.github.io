@@ -1820,12 +1820,25 @@ now override the 3.3 new styles for modern browsers & apply opacity
   font-weight: 700;
 }
 
-.productImg .img-responsive {
+.productImg img {
   max-height: 200px;
 }
 
-.productImg .carousel-inner .img-responsive {
-  max-height: 600px;
+.productImg {
+  border: 1px solid rgba(168, 168, 168, 0.2);
+  border-radius: 10px;
+}
+
+.productImg .carousel-inner,
+.productImg .carousel-inner .item {
+  height: 500px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.productImg .carousel-inner img {
+  max-height: 500px;
+  margin: auto;
 }
 
 #productDetails .innerDetails {
@@ -2492,12 +2505,11 @@ section:last-child {
   #export .col-sm-2 {
     margin-bottom: 15px;
   }
-  #contact .commonText {
-    font-size: 16px;
-  }
+  #contact .commonText,
   #contact .commonText a {
     font-size: 16px;
   }
+
   #footerBottom .copy,
   #footerBottom .best,
   #footerBottom .dimakh {
@@ -2570,13 +2582,7 @@ section:last-child {
 }
 
 @media(max-width:767px) {
-  .modal-backdrop {
-    display: none !important;
-  }
   #myModalDiv {
-    display: none !important;
-  }
-  .modal-dialog {
     display: none !important;
   }
   #navigaTion .secondUnstyled {
@@ -2701,7 +2707,8 @@ section:last-child {
   #reach .strengths li:nth-child(3):before {
     top: 17px;
   }
-  #contact .commonText {
+  #contact .commonText,
+  #contact .commonText a {
     font-size: 12px;
   }
   #reach .strengths li .commonCertificate {
