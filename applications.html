@@ -12,12 +12,12 @@ title: Applications
           <ul class="nav applications-sidenav">
           {% for category in site.data.applicationCategories %}
             <li>
-              <a href="#{{ category | downcase | split: ' ' | join: '-' }}">{{ category }}</a>
+              <a href="#{{ category | downcase | replace: ' ', '-' }}">{{ category }}</a>
               <ul class="nav">
                 {% for application in site.applications %}
                   {% if application.category == category %}
                     <li>
-                      <a href="#{{ application.title | downcase | split: ' ' | join: '-' }}">{{ application.title }}</a>
+                      <a href="#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a>
                     </li>
                   {% endif %}
                 {% endfor %}
@@ -29,15 +29,15 @@ title: Applications
       </div>
       <div class="col-md-9">
         {% for category in site.data.applicationCategories %}
-          <section id="{{ category | downcase | split: ' ' | join: '-' }}">
+          <section id="{{ category | downcase | replace: ' ', '-' }}">
             <h2>{{ category }}</h2>
               {% for application in site.applications %}
                 {% if application.category == category %}
-                  <section id="{{ application.title | downcase | split: ' ' | join: '-' }}">
+                  <section id="{{ application.title | downcase | replace: ' ', '-' }}">
                     <h3>{{ application.title }}</h3>
                     <div class="row">
                       <div class="col-md-3">
-                        <figure><img src="applications/{{ application.title | downcase | split: ' ' | join: '-' }}.jpg" alt="{{ application.title }}"></figure>
+                        <figure><img src="applications/{{ application.title | downcase | replace: ' ', '-' }}.jpg" alt="{{ application.title }}"></figure>
                       </div>
                       <div class="col-md-9">
                         <p>{{ application.description }}</p>
@@ -46,7 +46,7 @@ title: Applications
                         <h4>Recommended Models</h4>
                         {% for product in site.products %}
                           {% if product.applications contains application.title %}
-                            <a style="display: inline-block;" href="{{ product.url }}"><img class="productThumbnail img-responsive" src="/products/{{ product.category }}/{{ product.title | downcase | split: ' ' | join: '-' }}/{{ product.title | downcase | split: ' ' | join: '-' }}-thumb.png" alt="{{ product.title }}">{{ product.title }}</a>
+                            <a style="display: inline-block;" href="{{ product.url }}"><img class="productThumbnail img-responsive" src="/products/{{ product.category }}/{{ product.title | downcase | replace: ' ', '-' }}/{{ product.title | downcase | replace: ' ', '-' }}-thumb.png" alt="{{ product.title }}">{{ product.title }}</a>
                           {% endif %}
                         {% endfor %}
                       </div>

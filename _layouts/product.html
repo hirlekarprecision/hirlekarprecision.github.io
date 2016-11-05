@@ -41,7 +41,7 @@ layout: default
                     <div class="row">
                       <div class="col-md-3 productImg">
                         <figure>
-                          <img src="{{ page.title | downcase | split: ' ' | join: '-' }}-1.png" alt="{{ page.title }}" class="img-responsive" data-toggle="modal" data-target=".modal-images">
+                          <img src="{{ page.title | downcase | replace: ' ', '-' }}-1.png" alt="{{ page.title }}" class="img-responsive" data-toggle="modal" data-target=".modal-images">
                           <figcaption>{{ page.title }}</figcaption>
                         </figure>
 
@@ -65,7 +65,7 @@ layout: default
                                       {% break %}
                                     {% else %}
                                       <div class="item {% if i == 1 %}active{% endif %}">
-                                        <img class="img-responsive" src="{{ page.title | downcase | split: ' ' | join: '-' }}-{{ i }}.png">
+                                        <img class="img-responsive" src="{{ page.title | downcase | replace: ' ', '-' }}-{{ i }}.png">
                                         <div class="carousel-caption">
                                         </div>
                                       </div>

@@ -54,7 +54,7 @@
             <ul>
               {% for application in site.applications %}
                 {% if forloop.index < 8 %}
-                  <li><a href="/applications.html#{{ application.title | downcase | split: ' ' | join: '-' }}">{{ application.title }}</a></li>
+                  <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
                 {% endif %}
               {% endfor %}
             </ul>
@@ -66,7 +66,7 @@
             <ul>
               {% for application in site.applications %}
                 {% if forloop.index >= 7 %}
-                  <li><a href="/applications.html#{{ application.title | downcase | split: ' ' | join: '-' }}">{{ application.title }}</a></li>
+                  <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
                 {% endif %}
               {% endfor %}
             </ul>
