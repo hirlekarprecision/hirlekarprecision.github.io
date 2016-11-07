@@ -646,8 +646,6 @@ now override the 3.3 new styles for modern browsers & apply opacity
   width: 100%;
   background: #fff;
   padding: 30px 30px;
-  /*height:325px;*/
-  height: 275px;
 }
 
 #productPrinciple h3 {
@@ -3112,4 +3110,40 @@ section:last-child {
 
 .nopadding {
   padding-left: 0;
+}
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Show more';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Show less';
+}
+
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: .25em;
 }
