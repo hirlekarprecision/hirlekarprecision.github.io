@@ -1833,6 +1833,9 @@ now override the 3.3 new styles for modern browsers & apply opacity
   min-height: 115px;
 }
 
+#checklistLink {
+  background: rgba(191, 220, 122, 0.8);
+}
 #productDetails .innerDetails a {
   text-decoration: none;
 }
