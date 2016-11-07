@@ -783,8 +783,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
   background: url(../images/hirlekar-naturalGas.png) no-repeat!important;
 }
 
-#explorProducts .flame {
-  background: url(../images/hirlekar-flameproof.png) no-repeat!important;
+#explorProducts .piston {
+  background: url(../images/hirlekar-filter.png) no-repeat!important;
 }
 
 #explorProducts .flame {
