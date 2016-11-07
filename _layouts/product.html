@@ -35,11 +35,6 @@ layout: default
                   <div role="tabpanel" class="tab-pane active" id="DPG">
                     <div class="row">
                       <div class="col-md-3 productImg">
-                        {% if page.isNew %}
-                        <div class="ribbon-wrapper-green">
-                          <div class="ribbon-green">New!</div>
-                        </div>
-                        {% endif %}
                         <figure>
                           <img src="{{ page.title | downcase | replace: ' ', '-' }}-1.png" alt="{{ page.title }}" class="img-responsive" data-toggle="modal" data-target="#modal-images">
                           <figcaption>{{ page.title }}</figcaption>

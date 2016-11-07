@@ -1822,11 +1822,6 @@ now override the 3.3 new styles for modern browsers & apply opacity
   max-height: 200px;
 }
 
-.productImg {
-  border: 1px solid rgba(168, 168, 168, 0.2);
-  border-radius: 10px;
-}
-
 .productImg .carousel-inner img {
   max-height: 500px;
   margin: auto;
