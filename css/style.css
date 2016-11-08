@@ -734,6 +734,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 }
 
 #productPrinciple .principle {
+  margin: 0 auto;
+  max-height: 250px;
   border: 1px solid #898989;
   margin: 0 15px 0 0;
 }
