@@ -1021,6 +1021,10 @@ now override the 3.3 new styles for modern browsers & apply opacity
   margin-top: 15px;
 }
 
+#export .img-responsive {
+  margin: 0 auto;
+}
+
 
 /***Map***/
 
@@ -1802,6 +1806,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #checklistLink {
   background: rgba(191, 220, 122, 0.8);
 }
+
 #productDetails .innerDetails a {
   text-decoration: none;
 }
@@ -2317,9 +2322,6 @@ section:last-child {
   #export h2 {
     width: 40%;
   }
-  #export img {
-    width: 100%;
-  }
   /***Product***/
   .productName .nav-tabs>li>a {
     font-size: 15px;
@@ -2638,6 +2640,9 @@ section:last-child {
     width: 60%;
     padding: 0;
   }
+  #export figcaption {
+    display: none;
+  }
   #footerLink {
     padding: 25px 0 25px 30px;
   }
@@ -2841,7 +2846,7 @@ section:last-child {
     padding: 0;
   }
   #export .col-xs-2 {
-    width: 50%;
+    width: 33%;
   }
   /***About US***/
   #reach .strengths li .commonCertificate {
