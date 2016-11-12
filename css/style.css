@@ -1026,6 +1026,26 @@ now override the 3.3 new styles for modern browsers & apply opacity
   margin: 0 auto;
 }
 
+/*****Terms and Conditions****/
+#terms {
+  -webkit-column-count: 3;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 3;
+  /* Firefox */
+  column-count: 3;
+  column-gap: 80px;
+  margin-bottom: 30px;
+}
+
+#terms ul {
+  list-style: circle;
+}
+
+#terms li {
+  margin: 20px 0;
+}
+
+
 
 /***Map***/
 
@@ -2333,6 +2353,14 @@ section:last-child {
   .productName .nav-tabs>li>a {
     padding: 30px 10px;
   }
+
+  #terms {
+    -webkit-column-count: 2;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 2;
+    /* Firefox */
+    column-count: 2;
+  }
 }
 
 @media(max-width:991px) {
@@ -2700,6 +2728,15 @@ section:last-child {
   }
   #link {
     padding: 15px 0;
+  }
+
+  #terms {
+    -webkit-column-count: 1;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 1;
+    /* Firefox */
+    column-count: 1;
+    margin: auto 40px;
   }
 }
 
