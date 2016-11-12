@@ -2458,11 +2458,6 @@ section:last-child {
   #export .col-sm-2 {
     margin-bottom: 15px;
   }
-  #contact .commonText,
-  #contact .commonText a {
-    font-size: 16px;
-  }
-
   #footerBottom .copy,
   #footerBottom .best,
   #footerBottom .dimakh {
@@ -2663,10 +2658,6 @@ section:last-child {
   #reach .strengths li:nth-child(3):before {
     top: 17px;
   }
-  #contact .commonText,
-  #contact .commonText a {
-    font-size: 12px;
-  }
   #reach .strengths li .commonCertificate {
     width: 70%;
   }
@@ -2730,6 +2721,10 @@ section:last-child {
     border-left: none;
     margin-left: 0;
   }
+  #contact .commonText a,
+  #contact .commonText {
+    font-size: 16px;
+  }
 }
 
 @media(max-width:480px) {
@@ -2758,9 +2753,9 @@ section:last-child {
     width: 100%;
     padding: 15px 0;
   }
-  #contact .commonVertical {
-    border-right: none;
-    padding-bottom: 0;
+  #contact .commonText a,
+  #contact .commonText {
+    font-size: 13px;
   }
   #productPrinciple .carousel-control {
     width: 7%;
@@ -2865,6 +2860,10 @@ section:last-child {
   #contact .commonVertical {
     width: 100%;
     margin-bottom: 30px;
+  }
+  #contact .commonText a,
+  #contact .commonText {
+    font-size: 18px;
   }
 }
 
