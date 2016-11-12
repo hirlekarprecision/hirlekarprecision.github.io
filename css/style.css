@@ -737,7 +737,6 @@ now override the 3.3 new styles for modern browsers & apply opacity
   margin: 0 auto;
   max-height: 250px;
   border: 1px solid #898989;
-  margin: 0 15px 0 0;
 }
 
 #productPrinciple .newProduct {
@@ -772,41 +771,10 @@ now override the 3.3 new styles for modern browsers & apply opacity
   border-top: 1px solid #3a4246;
 }
 
-#explorProducts .commonProduct {
-  position: relative;
-  background: url(../images/hirlekar-naturalGas.png) no-repeat;
-  width: 187px;
-  height: 202px;
+#explorProducts .img-responsive {
+  width: 80%;
+  max-width: 180px;
   margin: 0 auto;
-  overflow: hidden;
-}
-
-#explorProducts .naturalGas {
-  background: url(../images/hirlekar-naturalGas.png) no-repeat!important;
-}
-
-#explorProducts .piston {
-  background: url(../images/hirlekar-filter.png) no-repeat!important;
-}
-
-#explorProducts .flame {
-  background: url(../images/hirlekar-flameproof.png) no-repeat!important;
-}
-
-#explorProducts .explosion {
-  background: url(../images/hirlekar-explosion.png) no-repeat!important;
-}
-
-#explorProducts .diaphragm {
-  background: url(../images/hirlekar-diaphragm.png) no-repeat!important;
-}
-
-#explorProducts .cryogenic {
-  background: url(../images/hirlekar-cryogenic.png) no-repeat!important;
-}
-
-#explorProducts .compound {
-  background: url(../images/hirlekar-compund-center.png) no-repeat!important;
 }
 
 #explorProducts .over {
@@ -816,10 +784,6 @@ now override the 3.3 new styles for modern browsers & apply opacity
   transition: all 0.5s;
   position: absolute;
   top: 202px;
-}
-
-#explorProducts .commonProduct:hover .over {
-  top: 0;
 }
 
 #explorProducts .over a {
@@ -2343,10 +2307,6 @@ section:last-child {
   #hirlekarPrecision p {
     margin-top: 30px;
     padding: 0 115px;
-  }
-  #productPrinciple .commonPrinciple {
-    height: 328px;
-    padding: 30px 25px;
   }
   #achievements figcaption {
     padding: 0 300px;
