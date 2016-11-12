@@ -8,7 +8,8 @@
   -moz-box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: 'Lato', sans-serif;
   position: relative;
   max-width: 100%;
@@ -3110,4 +3111,13 @@ section:last-child {
   line-height: 2;
   border: 1px solid #ddd;
   border-radius: .25em;
+}
+
+#certified .img-responsive {
+  margin: 10px auto;
+}
+
+#certified p,
+#certified h1 {
+  text-align: center;
 }
