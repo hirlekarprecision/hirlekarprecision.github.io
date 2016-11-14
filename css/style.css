@@ -3158,3 +3158,15 @@ section:last-child {
 #certified h1 {
   text-align: center;
 }
+
+#carousel-main {
+  background: #1d1816;
+  color: white;
+  min-height: 400px;
+}
+
+#carousel-main img {
+  margin: 20px;
+  height: 350px;
+  width: auto;
+}
