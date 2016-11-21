@@ -1398,6 +1398,11 @@ now override the 3.3 new styles for modern browsers & apply opacity
 
 /***Why***/
 
+#why.container-fluid, #reach.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 #why .col-md-6 {
   padding: 0;
 }
@@ -1426,6 +1431,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
   padding: 32px 50px;
   position: relative;
   float: left;
+  width: 100%;
 }
 
 #why .strengths:after {
@@ -1567,8 +1573,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 
 #reach .strengths li .commonCertificate {
   width: 74%;
+  height: 95%;
   margin: 0 auto;
-  padding-bottom: 10px;
   border-bottom: 1px solid #010101;
 }
 
