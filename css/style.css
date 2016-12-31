@@ -3176,3 +3176,8 @@ section:last-child {
   height: 350px;
   width: auto;
 }
+
+mark {
+    background-color: yellow;
+    color: red;
+}
