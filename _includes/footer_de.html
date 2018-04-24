@@ -47,24 +47,12 @@
             <a href="mailto:sales@hirlekarprecision.com">sales@hirlekarprecision.com</a>
           </div>
         </div>
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <h2>Anwendungsbereich</h2>
-          <div class="footerList">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <h2>Application <span>Sector</span></h2>
+          <div class="footerList" id="applicationList">
             <ul>
               {% for application in site.applications %}
-                {% if forloop.index < 8 %}
-                  <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <h2 class="unwanted">&nbsp;</h2>
-          <div class="footerList">
-            <ul>
-              {% for application in site.applications %}
-                {% if forloop.index >= 7 %}
+                {% if application.language == 'de' %}
                   <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
                 {% endif %}
               {% endfor %}
@@ -75,12 +63,12 @@
           <h2>Schnelle <span>Info</span></h2>
           <div class="footerList">
             <ul>
-              <li><a href="/">Startseite</a></li>
-              <li><a href="/about.html">Über uns</a></li>
-              <li><a href="/products/">Produkte</a></li>
-              <li><a href="/applications.html">Anwendungen</a></li>
-              <li><a href="/contact.html">Kontakt</a></li>
-              <li><a href="/terms.html">Allgemeine Geschäftsbedingungen</a></li>
+              <li><a href="/de/">Startseite</a></li>
+              <li><a href="/de/about.html">Über uns</a></li>
+              <li><a href="/products/de/">Produkte</a></li>
+              <li><a href="/de/applications.html">Anwendungen</a></li>
+              <li><a href="/de/contact.html">Kontakt</a></li>
+              <li><a href="/de/terms.html">Allgemeine Geschäftsbedingungen</a></li>
             </ul>
           </div>
           <!-- <h3>Connect <span>Us</span></h3>

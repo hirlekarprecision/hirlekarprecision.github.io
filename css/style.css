@@ -1190,6 +1190,15 @@ now override the 3.3 new styles for modern browsers & apply opacity
   position: relative;
 }
 
+#footerLink #applicationList ul {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  column-count: 2;
+  column-gap: 20px;
+}
+
 #footerLink .footerList li:before {
   content: " \f105";
   font-family: FontAwesome;

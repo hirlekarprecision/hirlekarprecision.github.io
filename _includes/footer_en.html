@@ -47,24 +47,12 @@
             <a href="mailto:sales@hirlekarprecision.com">sales@hirlekarprecision.com</a>
           </div>
         </div>
-        <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="col-md-6 col-sm-6 col-xs-12">
           <h2>Application <span>Sector</span></h2>
-          <div class="footerList">
+          <div class="footerList" id="applicationList">
             <ul>
               {% for application in site.applications %}
-                {% if forloop.index < 8 %}
-                  <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-3 col-xs-12">
-          <h2 class="unwanted">&nbsp;</h2>
-          <div class="footerList">
-            <ul>
-              {% for application in site.applications %}
-                {% if forloop.index >= 7 %}
+                {% if application.language == 'en' %}
                   <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
                 {% endif %}
               {% endfor %}
@@ -75,12 +63,12 @@
           <h2>Quick <span>Info</span></h2>
           <div class="footerList">
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about.html">About Us</a></li>
-              <li><a href="/products/">Products</a></li>
-              <li><a href="/applications.html">Application</a></li>
-              <li><a href="/contact.html">Contact Us</a></li>
-              <li><a href="/terms.html">Terms and Conditions</a></li>
+              <li><a href="/en/">Home</a></li>
+              <li><a href="/en/about.html">About Us</a></li>
+              <li><a href="/products/en/">Products</a></li>
+              <li><a href="/en/applications.html">Application</a></li>
+              <li><a href="/en/contact.html">Contact Us</a></li>
+              <li><a href="/en/terms.html">Terms and Conditions</a></li>
             </ul>
           </div>
           <!-- <h3>Connect <span>Us</span></h3>
