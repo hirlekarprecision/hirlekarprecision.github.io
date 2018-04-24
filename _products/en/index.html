@@ -1,0 +1,221 @@
+---
+layout: default_en
+banner: productBanner
+title: Products
+---
+<div class="container-fluid" id="portfolioDummy">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+        <form class="controls" id="Filters">
+          <fieldset>
+            <h4>Applications</h4> 
+            {% for application in site.applications %}
+            <div class="checkbox">
+              <label><input type="checkbox" value=".{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</label>
+            </div>
+            {% endfor %}
+          </fieldset>
+          <fieldset>
+            <h4>Special Requirements</h4>
+            {% for requirement in site.data.specialRequirements %}
+            <div class="checkbox">
+              <label><input type="checkbox" value=".{{ requirement | downcase | replace: ' ', '-' }}">{{ requirement }}</label>
+            </div>
+            {% endfor %}
+          </fieldset>
+        </form>
+      </div>
+      <div id="Container" class="col-md-9 col-sm-9">
+          <div class="row">
+            <div class="fail-message"><span>No items were found matching the selected filters</span></div>
+            <div class="col-md-4">
+              <h4>Piston Gauges</h4>
+              {% for product in site.products %} 
+                {% if product.category == 'piston' %}
+                <div class="row mix {% for application in product.applications %}{{ application | downcase | replace: ' ', '-' }} {% endfor %}{{ product.specialRequirements | join: ' ' }}">
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | replace: ' ', '-' }}/{{ product.title | downcase | replace: ' ', '-' }}-thumb.png" alt="{{ product.title }}"></a>
+                  </div>
+                  <div class="col-md-7 col-sm-7 col-xs-7 nopadding">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                  </div>
+                </div>
+                {% endif %} 
+              {% endfor %}
+            </div>
+            <div class="col-md-8">
+              <h4>Diaphragm Gauges</h4>
+              {% for product in site.products %} 
+                {% if product.category == 'diaphragm' %}
+                <div class="row mix {% for application in product.applications %}{{ application | downcase | replace: ' ', '-' }} {% endfor %}{{ product.specialRequirements | join: ' ' }}">
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | replace: ' ', '-' }}/{{ product.title | downcase | replace: ' ', '-' }}-thumb.png" alt="{{ product.title }}"></a>
+                  </div>
+                  <div class="col-md-7 col-sm-7 col-xs-7 nopadding">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                  </div>
+                </div>
+                {% endif %} 
+              {% endfor %}
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/jquery.mixitup.min.js" type="text/javascript" ></script>
+<script type="text/javascript">
+// To keep our code clean and modular, all custom functionality will be contained inside a single object literal called "checkboxFilter".
+
+var checkboxFilter = {
+  
+  // Declare any variables we will need as properties of the object
+  
+  $filters: null,
+  $reset: null,
+  groups: [],
+  outputArray: [],
+  outputString: '',
+  
+  // The "init" method will run on document ready and cache any jQuery objects we will need.
+  
+  init: function(){
+    var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "checkboxFilter" object so that we can share methods and properties between all parts of the object.
+    
+    self.$filters = $('#Filters');
+    self.$reset = $('#Reset');
+    self.$container = $('#Container');
+    
+    self.$filters.find('fieldset').each(function(){
+      self.groups.push({
+        $inputs: $(this).find('input'),
+        active: [],
+        tracker: false
+      });
+    });
+    
+    self.bindHandlers();
+  },
+  
+  // The "bindHandlers" method will listen for whenever a form value changes. 
+  
+  bindHandlers: function(){
+    var self = this;
+    
+    self.$filters.on('change', function(){
+      self.parseFilters();
+    });
+    
+    self.$reset.on('click', function(e){
+      e.preventDefault();
+      self.$filters[0].reset();
+      self.parseFilters();
+    });
+  },
+  
+  // The parseFilters method checks which filters are active in each group:
+  
+  parseFilters: function(){
+    var self = this;
+ 
+    // loop through each filter group and add active filters to arrays
+    
+    for(var i = 0, group; group = self.groups[i]; i++){
+      group.active = []; // reset arrays
+      group.$inputs.each(function(){ 
+        $(this).is(':checked') && group.active.push(this.value);
+      });
+      group.active.length && (group.tracker = 0);
+    }
+    
+    self.concatenate();
+  },
+  
+  // The "concatenate" method will crawl through each group, concatenating filters as desired:
+  
+  concatenate: function(){
+    var self = this,
+      cache = '',
+      crawled = false,
+      checkTrackers = function(){
+        var done = 0;
+        
+        for(var i = 0, group; group = self.groups[i]; i++){
+          (group.tracker === false) && done++;
+        }
+
+        return (done < self.groups.length);
+      },
+      crawl = function(){
+        for(var i = 0, group; group = self.groups[i]; i++){
+          group.active[group.tracker] && (cache += group.active[group.tracker]);
+
+          if(i === self.groups.length - 1){
+            self.outputArray.push(cache);
+            cache = '';
+            updateTrackers();
+          }
+        }
+      },
+      updateTrackers = function(){
+        for(var i = self.groups.length - 1; i > -1; i--){
+          var group = self.groups[i];
+
+          if(group.active[group.tracker + 1]){
+            group.tracker++; 
+            break;
+          } else if(i > 0){
+            group.tracker && (group.tracker = 0);
+          } else {
+            crawled = true;
+          }
+        }
+      };
+    
+    self.outputArray = []; // reset output array
+
+    do{
+      crawl();
+    }
+    while(!crawled && checkTrackers());
+
+    self.outputString = self.outputArray.join();
+    
+    // If the output string is empty, show all rather than none:
+    
+    !self.outputString.length && (self.outputString = 'all'); 
+    
+    //console.log(self.outputString); 
+    
+    // ^ we can check the console here to take a look at the filter string that is produced
+    
+    // Send the output string to MixItUp via the 'filter' method:
+    
+    if(self.$container.mixItUp('isLoaded')){
+      self.$container.mixItUp('filter', self.outputString);
+    }
+  }
+};
+  
+// On document ready, initialise our code.
+
+$(function(){
+      
+  // Initialize checkboxFilter code
+      
+  checkboxFilter.init();
+      
+  // Instantiate MixItUp
+      
+  $('#Container').mixItUp({
+    controls: {
+      enable: false // we won't be needing these
+    },
+    animation: {
+      easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
+      duration: 600
+    }
+  });    
+});
+</script>

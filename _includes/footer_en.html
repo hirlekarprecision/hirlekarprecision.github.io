@@ -1,0 +1,117 @@
+  <!--contactTime-->
+  <div class="container-fluid" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 commonVertical">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          <div class="commonText">
+            +91 98 2304 3051
+          </div>
+        </div>
+        <div class="col-md-6  col-sm-6  col-xs-6 commonVertical commonVerticalExtra">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <div class="commonText">
+            <a href="mailto:sales@hirlekarprecision.com">sales@hirlekarprecision.com</a>
+          </div>
+        </div>
+        <!--<div class="col-md-4 col-sm-4 col-xs-4">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <div class="commonText">
+              10-00 AM to 7-00 PM
+            </div>
+          </div>-->
+      </div>
+    </div>
+  </div>
+  <!--contactTime-->
+  <!--Footer link-->
+  <div class="container-fluid" id="footerLink">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <h2>Contact <span>Info</span></h2>
+          <figure><img src="/images/logo/hirlekar-pricision-footer-logo.png" alt="Hirlekar Pricision" class="img-responsive"></figure>
+          <h3><i class="fa fa-map-marker" aria-hidden="true"></i>  Head Office <span>(Accounts & Administration)</span></h3>
+          <div class="addr">
+            18-19 Gultekadi Industrial Estate
+            <br> Pune 411 037, INDIA
+            <br> Tel. : +91 20 2426 5743 / +91 20 2427 4000
+          </div>
+          <h3><i class="fa fa-map-marker" aria-hidden="true"></i>  Factory <span>(Manufacturing & Sales)</span></h3>
+          <div class="addr">
+            Plot No.67, Hadapsar Industrial Estate,
+            <br> T. P. Scheme II, Ramtekadi
+            <br> Pune 411 013, INDIA
+            <br> Tel. : +91 98 2304 3051
+            <br> E-mail:
+            <a href="mailto:sales@hirlekarprecision.com">sales@hirlekarprecision.com</a>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <h2>Application <span>Sector</span></h2>
+          <div class="footerList">
+            <ul>
+              {% for application in site.applications %}
+                {% if forloop.index < 8 %}
+                  <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <h2 class="unwanted">&nbsp;</h2>
+          <div class="footerList">
+            <ul>
+              {% for application in site.applications %}
+                {% if forloop.index >= 7 %}
+                  <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12">
+          <h2>Quick <span>Info</span></h2>
+          <div class="footerList">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about.html">About Us</a></li>
+              <li><a href="/products/">Products</a></li>
+              <li><a href="/applications.html">Application</a></li>
+              <li><a href="/contact.html">Contact Us</a></li>
+              <li><a href="/terms.html">Terms and Conditions</a></li>
+            </ul>
+          </div>
+          <!-- <h3>Connect <span>Us</span></h3>
+          <div class="media">
+            <ul>
+              <li><a href="javascript:void(0);"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a href="javascript:void(0);"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Footer link-->
+  <!--Footer-->
+  <div class="container-fluid" id="footerBottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="copy">
+            Copyright © 2016 Hirlekar Precision
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="best">
+            Best viewed in IE 10+, Firefox 20+, Chrome , Safari5+, Opera12+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

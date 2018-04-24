@@ -1,0 +1,222 @@
+---
+layout: default_en
+---
+<!--Navigation-->
+<div class="container-fluid productBanner" id="productBanner">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <!--<ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li class="active">Product List</li>
+        </ol>-->
+  </div>
+</div>
+<div class="container-fluid" id="pdf">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="/en">Home</a></li>
+      <li><a href="/products/en">Products</a></li>
+      <li><a href="#">{{ page.category | capitalize }}</a></li>
+      <li class="active">{{ page.title }}</li>
+    </ol>
+  </div>
+</div>
+<div class="container-fluid" id="subProduct">
+  <div class="container">
+    <div class="row">
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="Piston">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="innerProduct">
+                <!-- Tab panes -->
+                <div class="tab-content" id="productDetails">
+                  <div role="tabpanel" class="tab-pane active" id="DPG">
+                    <div class="row">
+                      <div class="col-md-3 productImg">
+                        <figure>
+                          <img src="{{ page.title | downcase | replace: ' ', '-' }}-1.png" alt="{{ page.title }}" class="img-responsive" data-toggle="modal" data-target="#modal-images">
+                          <figcaption>{{ page.title }}</figcaption>
+                        </figure>
+
+                        <div class="modal fade" id="modal-images" tabindex="-1" role="dialog" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div id="carousel-images" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                  {% for i in (1..100) %}
+                                    {% if i > page.images %}
+                                      {% break %}
+                                    {% else %}
+                                      <li data-target="#carousel-images" data-slide-to="{{ i }}" class="{% if i == 1 %}active{% endif %}"></li>
+                                    {% endif %}
+                                  {% endfor %}
+                                </ol>
+
+                                <div class="carousel-inner" role="listbox">
+                                  {% for i in (1..100) %}
+                                    {% if i > page.images %}
+                                      {% break %}
+                                    {% else %}
+                                      <div class="item {% if i == 1 %}active{% endif %}">
+                                        <img class="img-responsive" src="{{ page.title | downcase | replace: ' ', '-' }}-{{ i }}.png">
+                                        <div class="carousel-caption">
+                                        </div>
+                                      </div>
+                                    {% endif %}
+                                  {% endfor %}
+                                </div>
+
+                                <a class="left carousel-control" href="#carousel-images" role="button" data-slide="prev">
+                                  <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-images" role="button" data-slide="next">
+                                  <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <p>
+                          <b>Pressure Ranges</b>
+                          <br> {{ page.pressureRange | newline_to_br }}
+                          <br>
+                        </p>
+                      </div>
+                      <div class="col-md-9 text-center">
+                        <div class="row" id="downloadables">
+                          {% if page.datasheet %}
+                          <div class="col-md-3 col-sm-3 col-xs-6 commonDetails">
+                            <div class="innerDetails">
+                              <a href="datasheet.pdf" target="_blank">
+                                <h5 class="data1">Datasheet</h5>
+                                <div class="datasheet commonBlock">
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          {% endif %}
+                          {% if page.drawings %}
+                          <div class="col-md-3 col-sm-3 col-xs-6 commonDetails sixFourtyDevice">
+                            <div class="innerDetails">
+                              <a href="drawings.pdf" target="_blank">
+                                <h5 class="data2"> Dimensional Drawing</h5>
+                                <div class="drawing commonBlock">
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          {% endif %}
+                          {% if page.ordering %}
+                          <div class="col-md-3 col-sm-3 col-xs-6 commonDetails">
+                            <div class="innerDetails">
+                              <a href="ordering.pdf" target="_blank">
+                                <h5 class="data3">How To Order</h5>
+                                <div class="how commonBlock">
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          {% endif %}
+                          {% if page.switch-cover %}
+                          <div class="col-md-3 col-sm-3 col-xs-6 commonDetails fourBlock">
+                            <div class="innerDetails">
+                              <a href="switch-cover.pdf" target="_blank">
+                                <h5 class="data4"> Switch Cover Combinations</h5>
+                                <div class="switch commonBlock">
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          {% endif %}
+                          {% if page.bracket-mounting %}
+                          <div class="col-md-3 col-sm-3 col-xs-6 commonDetails">
+                            <div class="innerDetails bottomBorder">
+                              <a href="bracket-mounting.pdf" target="_blank">
+                                <h5 class="data5"> Bracket Mounting Combination</h5>
+                                <div class="bracket commonBlock">
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          {% endif %}
+                          {% if page.porting %}
+                          <div class="col-md-3 col-sm-3 col-xs-6 commonDetails sixFourtyDevice">
+                            <div class="innerDetails bottomBorder">
+                              <a href="porting.pdf" target="_blank">
+                                <h5 class="data6"> Porting Details</h5>
+                                <div class="porting commonBlock">
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          {% endif %}
+                          {% if page.manual %}
+                          <div class="col-md-3 col-sm-3 col-xs-6 commonDetails">
+                            <div class="innerDetails bottomBorder sixfourtyDeviceborder">
+                              <a href="manual.pdf" target="_blank">
+                                <h5 class="data7">Instructions Manual</h5>
+                                <div class="instructions commonBlock">
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          {% endif %}
+                          <div class="col-md-3 col-sm-3 col-xs-6 commonDetails fourBlock" id="checklistLink">
+                            <div class="innerDetails bottomBorder sixfourtyDeviceborder">
+                              <a href="https://goo.gl/forms/nxU8ClOfNBZrYjf72" target="_blank">
+                                <h5 class="data8">Check List For Enquiries</h5>
+                                <div class="check commonBlock">
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h3>At a Glance</h3>
+                        <p class="glance">
+                          {{ page.summary | newline_to_br }}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h3>Specifications</h3>
+                        <div class="table-responsive outerTable">
+                          <table width="100%" border="1" class="table">
+                            {% for spec in page.specs %}
+                            <tr>
+                              <td>{{spec.name}}</td>
+                              <td>{{spec.value | newline_to_br }}</td>
+                            </tr>
+                            {% endfor %}
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container-fluid" id="link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-8 col-md-offset-2">
+        <div class="compatibility threeSixty">
+          <iframe width="100%" height="350px" src="https://www.youtube.com/embed/yAoLSRbwxL8" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
