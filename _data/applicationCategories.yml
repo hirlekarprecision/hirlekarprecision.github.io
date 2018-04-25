@@ -4,7 +4,7 @@ en:
  - Level Measurement
  - Pressure Monitoring
 de:
- - Filter Monitoring
- - Flow Monitoring
- - Level Measurement
- - Pressure Monitoring
+ - Filterüberwachung
+ - Durchflussüberwachung
+ - Füllstandmessung
+ - Drucküberwachung
