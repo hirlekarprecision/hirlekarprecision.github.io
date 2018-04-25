@@ -41,9 +41,9 @@ title: Applications
                       </div>
                       <div class="col-md-9">
                         <p>{{ application.description }}</p>
-                        <h4>Advantages</h4>
+                        <h4>Vorteile</h4>
                         <p>{{ application.advantages }}</p>
-                        <h4>Recommended Models</h4>
+                        <h4>Empfohlene Modelle</h4>
                         {% for product in site.products %}
                           {% if product.applications contains application.title and product.language == 'de' %}
                             <a style="display: inline-block;" href="{{ product.url }}"><img class="productThumbnail img-responsive" src="/products/de/{{ product.category }}/{{ product.title | downcase | replace: ' ', '-' }}/{{ product.title | downcase | replace: ' ', '-' }}-thumb.png" alt="{{ product.title }}">{{ product.title }}</a>
@@ -51,7 +51,7 @@ title: Applications
                         {% endfor %}
                       </div>
                       <div class="col-md-12">
-                        <h4>Note</h4>
+                        <h4>Hinweis</h4>
                         <p>{{ application.note | newline_to_br }}</p>
                       </div>
                     </div>
@@ -70,10 +70,10 @@ title: Applications
   //Scroll hover Map isn't zoom
   $(".bar").click(function() {
       $(".bar").css("width","0%");
-      setTimeout(function(){ $(".bar").css('width','100%'); },500)    
+      setTimeout(function(){ $(".bar").css('width','100%'); },500)
   });
-          
-  $(".bar").mousedown(function(e){ 
+
+  $(".bar").mousedown(function(e){
       $(".bar").css("width","0%");
       setTimeout(function(){ $(".bar").css('width','100%'); },500)
   });
@@ -87,10 +87,10 @@ title: Applications
       $('body').scrollspy("refresh");
   })
   $('.applications-sidebar').affix({
-      offset: {     
+      offset: {
         top: $('.applications-sidebar').offset().top,
         bottom: ($('#footerBottom').outerHeight(true) + $('#footerLink').outerHeight(true) + $('#contact').outerHeight(true)) + 800
-        
+
       }
   });
 </script>
