@@ -20,7 +20,7 @@ title: Products
           </fieldset>
           <fieldset>
             <h4>Besondere Anforderungen</h4>
-            {% for requirement in site.data.specialRequirements %}
+            {% for requirement in site.data.specialRequirements.de %}
             <div class="checkbox">
               <label><input type="checkbox" value=".{{ requirement | downcase | replace: ' ', '-' }}">{{ requirement }}</label>
             </div>
