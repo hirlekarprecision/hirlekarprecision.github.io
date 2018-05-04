@@ -48,12 +48,12 @@
           </div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
-          <h2>Application <span>Sector</span></h2>
+          <h2>Anwendungsbereich</h2>
           <div class="footerList" id="applicationList">
             <ul>
               {% for application in site.applications %}
                 {% if application.language == 'de' %}
-                  <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
+                  <li><a href="/de/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
                 {% endif %}
               {% endfor %}
             </ul>

@@ -31,7 +31,7 @@
         <div class="col-md-4 col-sm-4 col-xs-12">
           <h2>Contact <span>Info</span></h2>
           <figure><img src="/images/logo/hirlekar-pricision-footer-logo.png" alt="Hirlekar Pricision" class="img-responsive"></figure>
-          <h3><i class="fa fa-map-marker" aria-hidden="true"></i>  Head Office <span>(Accounts & Administration)</span></h3>
+          <h3><i class="fa fa-map-marker" aria-hidden="true"></i>  Head Office <spAnwendungsbereichan>(Accounts & Administration)</span></h3>
           <div class="addr">
             18-19 Gultekadi Industrial Estate
             <br> Pune 411 037, INDIA
@@ -53,7 +53,7 @@
             <ul>
               {% for application in site.applications %}
                 {% if application.language == 'en' %}
-                  <li><a href="/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
+                  <li><a href="/en/applications.html#{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</a></li>
                 {% endif %}
               {% endfor %}
             </ul>
