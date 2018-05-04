@@ -11,9 +11,11 @@ title: Products
           <fieldset>
             <h4>Applications</h4> 
             {% for application in site.applications %}
-            <div class="checkbox">
-              <label><input type="checkbox" value=".{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</label>
-            </div>
+              {% if application.language == 'en' %}
+                <div class="checkbox">
+                  <label><input type="checkbox" value=".{{ application.title | downcase | replace: ' ', '-' }}">{{ application.title }}</label>
+                </div>
+              {% endif %}
             {% endfor %}
           </fieldset>
           <fieldset>
@@ -32,7 +34,7 @@ title: Products
             <div class="col-md-4">
               <h4>Piston Gauges</h4>
               {% for product in site.products %} 
-                {% if product.category == 'piston' %}
+                {% if product.category == 'piston' and product.language == 'en' %}
                 <div class="row mix {% for application in product.applications %}{{ application | downcase | replace: ' ', '-' }} {% endfor %}{{ product.specialRequirements | join: ' ' }}">
                   <div class="col-md-5 col-sm-5 col-xs-5">
                     <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | replace: ' ', '-' }}/{{ product.title | downcase | replace: ' ', '-' }}-thumb.png" alt="{{ product.title }}"></a>
@@ -47,7 +49,7 @@ title: Products
             <div class="col-md-8">
               <h4>Diaphragm Gauges</h4>
               {% for product in site.products %} 
-                {% if product.category == 'diaphragm' %}
+                {% if product.category == 'diaphragm' and product.language == 'en' %}
                 <div class="row mix {% for application in product.applications %}{{ application | downcase | replace: ' ', '-' }} {% endfor %}{{ product.specialRequirements | join: ' ' }}">
                   <div class="col-md-5 col-sm-5 col-xs-5">
                     <a href="{{ product.url }}"><img class="productThumbnail img-responsive" src="{{ product.category }}/{{ product.title | downcase | replace: ' ', '-' }}/{{ product.title | downcase | replace: ' ', '-' }}-thumb.png" alt="{{ product.title }}"></a>
