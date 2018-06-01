@@ -8,7 +8,7 @@ sitemap:
   {% for product in site.products %}
     {% unless product.published == false %}
     <url>
-      <loc>{{ site.url }}{{ product.url }}</loc>
+      <loc>{{ site.url }}{{ product.url | remove: "index.html" }}</loc>
       {% if product.sitemap.lastmod %}
         <lastmod>{{ product.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
       {% elsif product.date %}
